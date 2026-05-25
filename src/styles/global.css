@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+/* Design tokens: dark editorial palette with vibrant amber accent.
+  Tailwind v4 reads these via the @theme directive and generates
+   utility classes automatically (bg-bg, text-accent, font-display, etc.) */
+@theme {
+  --color-bg: #0c0c0e;
+  --color-surface: #15161a;
+  --color-surface-2: #1c1d22;
+  --color-border: #26272d;
+  --color-ink: #f1ede4;
+  --color-muted: #8a8a90;
+  --color-accent: #7c3aed;
+  --color-accent-soft: #8b5cf6;
+  --color-mint: #9ef5b8;
+
+  --font-display: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Geist", "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Menlo", monospace;
+}
+
+/* Webfonts — loaded from Google Fonts for zero-setup */
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap");
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle grid background utility used in the hero */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Tiny pulse for the "Available" status dot */
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.5; transform: scale(0.85); }
+}
+.pulse-dot {
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+/* Staggered fade-up on load */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fadeUp 0.7s ease-out both;
+}
+
+/* Selection color matches the accent */
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}

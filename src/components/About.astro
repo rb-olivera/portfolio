@@ -1,0 +1,124 @@
+---
+import { site } from "../data/content";
+import SectionHeader from "./SectionHeader.astro";
+
+const skills = [
+  { category: "Análisis & datos",   items: ["Python", "Pandas", "NumPy", "Excel"] },
+  { category: "Visualización",      items: ["Power BI", "Matplotlib", "Seaborn"] },
+  { category: "Bases de datos",     items: ["SQL", "Modelado relacional"] },
+  { category: "Estadística & ML",   items: ["Estadística descriptiva", "Regresión lineal", "Clasificación"] },
+  { category: "Herramientas",       items: ["Git", "GitHub"] },
+];
+
+const education = [
+  { title: "IBM Data Analyst Professional Certificate", status: "en curso" },
+  { title: "Google Data Analytics Certificate",         status: "en curso" },
+  { title: "Analista de Datos — Talento Tech BA",       status: "Ministerio de Educación" },
+  { title: "+30 cursos en Alura Latam",                 status: "Python · SQL · ML · Visualización" },
+];
+---
+
+<section id="sobre-mi" class="py-24 border-t border-border">
+  <div class="mx-auto max-w-6xl px-6">
+    <SectionHeader number="03" label="Sobre mí" title="Quién soy" />
+
+    <div class="grid md:grid-cols-12 gap-12">
+
+      <!-- Left: bio -->
+      <div class="md:col-span-7 space-y-8">
+
+        <!-- Intro -->
+        <div class="space-y-4 text-lg leading-relaxed">
+          <p class="text-ink/90">
+            Data Analyst en formación con foco en Python, SQL y Power BI.
+            Mi trabajo se basa en convertir datos en información útil para
+            responder preguntas, detectar patrones y apoyar decisiones.
+          </p>
+          <p class="text-muted">
+            Vengo del mundo de la administración y la gestión documental en
+            telecomunicaciones, y de un paso por edición y librerías. Esa
+            trayectoria me dio lo que más valoro hoy: atención al detalle,
+            pensamiento estructurado y la capacidad de comunicar ideas
+            complejas con claridad.
+          </p>
+          <p class="text-muted">
+            Busco oportunidades iniciales como <span class="text-ink">Data Analyst Jr.</span>,{" "}
+            <span class="text-ink">BI Analyst Jr.</span> o{" "}
+            <span class="text-ink">Reporting Analyst</span>, donde pueda combinar
+            pensamiento analítico, criterio documental y herramientas técnicas
+            para transformar datos en información útil.
+          </p>
+        </div>
+
+        <!-- Skills grid -->
+        <div class="space-y-3">
+          <h3 class="font-mono text-xs uppercase tracking-widest text-muted">Stack técnico</h3>
+          <div class="grid sm:grid-cols-2 gap-3">
+            {skills.map((group) => (
+              <div class="bg-surface border border-border rounded-xl p-4">
+                <div class="text-xs font-mono text-muted mb-2">{group.category}</div>
+                <div class="flex flex-wrap gap-1.5">
+                  {group.items.map((item) => (
+                    <span class="text-xs bg-surface-2 border border-border rounded-full px-2.5 py-1">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="space-y-3">
+          <h3 class="font-mono text-xs uppercase tracking-widest text-muted">Formación</h3>
+          <ul class="space-y-2">
+            {education.map((item) => (
+              <li class="flex items-start gap-3 text-sm">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span>
+                <span>
+                  <span class="text-ink">{item.title}</span>
+                  <span class="text-muted"> — {item.status}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Right: info card -->
+      <div class="md:col-span-5 space-y-3 font-mono text-sm self-start sticky top-24">
+        <div class="flex justify-between border-b border-border pb-3">
+          <span class="text-muted">Ubicación</span>
+          <span>{site.location}</span>
+        </div>
+        <div class="flex justify-between border-b border-border pb-3">
+          <span class="text-muted">Modalidad</span>
+          <span>Remoto · Híbrido</span>
+        </div>
+        <div class="flex justify-between border-b border-border pb-3">
+          <span class="text-muted">Zona</span>
+          <span>Buenos Aires · Argentina</span>
+        </div>
+        <div class="flex justify-between border-b border-border pb-3">
+          <span class="text-muted">Disponibilidad</span>
+          <span class="text-mint">
+            {site.available ? "Abierta a oportunidades" : "Cerrada"}
+          </span>
+        </div>
+        <div class="flex justify-between border-b border-border pb-3">
+          <span class="text-muted">Idiomas</span>
+          <span>Español · Inglés intermedio</span>
+        </div>
+        <div class="flex justify-between pb-3">
+          <span class="text-muted">Email</span>
+          <a href={`mailto:${site.email}`} class="hover:text-accent transition-colors">
+            {site.email}
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

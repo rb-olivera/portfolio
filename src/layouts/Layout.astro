@@ -1,0 +1,36 @@
+---
+import "../styles/global.css";
+import { site } from "../data/content";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = `${site.name} | ${site.role} — Portfolio`,
+  description = `Portfolio de ${site.name}, ${site.role} basado en ${site.location}. ${site.tagline}`,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content={site.name} />
+    <meta name="theme-color" content="#7c3aed" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="es_AR" />
+
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen bg-bg text-ink">
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,40 @@
+---
+import { site } from "../data/content";
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-border py-10">
+  <div class="mx-auto max-w-6xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="text-sm text-muted font-mono">
+      {site.name} / Portfolio © {year}
+    </div>
+
+    <div class="flex items-center gap-5 text-sm">
+      <a
+        href={site.socials.github}
+        target="_blank"
+        rel="noopener"
+        class="text-muted hover:text-ink transition-colors"
+        >GitHub</a
+      >
+      <a
+        href={site.socials.linkedin}
+        target="_blank"
+        rel="noopener"
+        class="text-muted hover:text-ink transition-colors"
+        >LinkedIn</a
+      >
+      <a
+        href={site.socials.kaggle}
+        target="_blank"
+        rel="noopener"
+        class="text-muted hover:text-ink transition-colors"
+        >Kaggle</a
+      >
+      <a
+        href={`mailto:${site.email}`}
+        class="text-muted hover:text-ink transition-colors">Email</a
+      >
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,25 @@
+---
+import { site } from "../data/content";
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-bg/70 border-b border-border/60">
+  <nav class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+    <a href="#top" class="font-display text-xl tracking-tight">
+      {site.name.split(" ")[0]}<span class="text-accent">.</span>
+    </a>
+
+    <ul class="hidden md:flex items-center gap-8 text-sm text-muted">
+      <li><a href="#proyectos" class="hover:text-ink transition-colors">Proyectos</a></li>
+      <li><a href="#especialidades" class="hover:text-ink transition-colors">Especialidades</a></li>
+      <li><a href="#sobre-mi" class="hover:text-ink transition-colors">Sobre mí</a></li>
+      <li><a href="#contacto" class="hover:text-ink transition-colors">Contacto</a></li>
+    </ul>
+
+    <a
+      href="#contacto"
+      class="text-sm px-4 py-2 rounded-full border border-border hover:border-accent hover:text-accent transition-colors"
+    >
+      Hablemos →
+    </a>
+  </nav>
+</header>

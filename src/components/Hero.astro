@@ -1,0 +1,111 @@
+---
+import { site } from "../data/content";
+const initials = site.name
+  .split(" ")
+  .map((n) => n[0])
+  .slice(0, 2)
+  .join("");
+---
+
+<section id="top" class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+  <!-- Subtle grid background -->
+  <div class="absolute inset-0 bg-grid opacity-60 pointer-events-none"></div>
+  <!-- Radial glow accent -->
+  <div
+    class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none"
+    style="background: radial-gradient(circle, rgba(124,58,237,0.18) 0%, transparent 60%);"
+  >
+  </div>
+
+  <div class="relative mx-auto max-w-6xl px-6 w-full grid md:grid-cols-12 gap-12 items-center">
+    <!-- Left: text -->
+    <div class="md:col-span-7 fade-up" style="animation-delay: 0.05s;">
+      {site.available && (
+        <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-mono text-muted border border-border rounded-full px-3 py-1.5 mb-8">
+          <span class="w-1.5 h-1.5 rounded-full bg-mint pulse-dot"></span>
+          Disponible para nuevos desafíos
+        </div>
+      )}
+
+      <h1 class="font-display text-5xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tight mb-6">
+        Hola, soy <span class="text-accent">{site.name.split(" ")[0]}</span>.
+        <br />
+        <span class="italic text-muted">{site.role}</span>
+      </h1>
+
+      <p class="text-lg text-muted max-w-xl mb-10 leading-relaxed">
+        {site.tagline}
+      </p>
+
+      <div class="flex flex-wrap gap-3">
+        <a
+          href="#proyectos"
+          class="px-5 py-3 rounded-full bg-accent text-bg font-medium hover:bg-accent-soft transition-colors"
+        >
+          Ver Proyectos
+        </a>
+        <a
+          href="#contacto"
+          class="px-5 py-3 rounded-full border border-border hover:border-ink transition-colors"
+        >
+          Hablemos
+        </a>
+        <a
+          href={site.cvUrl}
+          class="px-5 py-3 rounded-full border border-border hover:border-ink transition-colors inline-flex items-center gap-2"
+        >
+          Descargar CV
+          <span class="text-accent">↓</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: photo + location card -->
+    <div class="md:col-span-5 fade-up" style="animation-delay: 0.25s;">
+      <div class="relative">
+        <!-- Photo placeholder with initials -->
+        <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-border bg-surface relative">
+          {site.photoUrl ? (
+            <img src={site.photoUrl} alt={site.name} class="w-full h-full object-cover" />
+          ) : (
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="font-display text-9xl text-accent/30">{initials}</span>
+            </div>
+          )}
+          <!-- Decorative SVG line chart overlay (data analyst flavor) -->
+          <svg
+            class="absolute bottom-4 left-4 right-4 h-16 opacity-70"
+            viewBox="0 0 200 60"
+            fill="none"
+          >
+            <polyline
+              points="0,45 25,38 50,42 75,30 100,32 125,18 150,22 175,10 200,14"
+              stroke="var(--color-accent)"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <polyline
+              points="0,45 25,38 50,42 75,30 100,32 125,18 150,22 175,10 200,14 200,60 0,60"
+              fill="url(#chartGrad)"
+              opacity="0.5"
+            />
+            <defs>
+              <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="var(--color-accent)" stop-opacity="0.4" />
+                <stop offset="100%" stop-color="var(--color-accent)" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <!-- Location card overlapping -->
+        <div class="absolute -bottom-4 -left-4 bg-surface border border-border rounded-xl px-4 py-3 backdrop-blur-md">
+          <div class="text-xs uppercase tracking-widest text-muted font-mono mb-0.5">Ubicación</div>
+          <div class="text-sm">{site.location}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

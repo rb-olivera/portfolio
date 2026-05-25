@@ -1,0 +1,20 @@
+---
+import { projects } from "../data/content";
+import SectionHeader from "./SectionHeader.astro";
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<section id="proyectos" class="py-24 border-t border-border">
+  <div class="mx-auto max-w-6xl px-6">
+    <SectionHeader
+      number="01"
+      label="Proyectos"
+      title="Mis análisis"
+      subtitle="Una selección de proyectos donde transformo datos en respuestas accionables."
+    />
+
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 items-start">
+      {projects.map((p) => <ProjectCard project={p} />)}
+    </div>
+  </div>
+</section>

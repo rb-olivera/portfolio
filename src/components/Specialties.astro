@@ -1,0 +1,34 @@
+---
+import { specialties } from "../data/content";
+import SectionHeader from "./SectionHeader.astro";
+---
+
+<section id="especialidades" class="py-24 border-t border-border">
+  <div class="mx-auto max-w-6xl px-6">
+    <SectionHeader
+      number="02"
+      label="Especialidades"
+      title="Cómo trabajo"
+      subtitle="Tres áreas en las que combino herramientas y método para resolver problemas con datos."
+    />
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {specialties.map((s, i) => (
+        <div class="bg-surface border border-border rounded-2xl p-6 hover:border-accent/60 transition-colors">
+          <div class="font-mono text-xs text-muted mb-3">
+            0{i + 1}
+          </div>
+          <h3 class="font-display text-2xl mb-3">{s.title}</h3>
+          <p class="text-muted text-sm leading-relaxed mb-6">{s.description}</p>
+          <div class="flex flex-wrap gap-2">
+            {s.tags.map((t) => (
+              <span class="text-xs font-mono text-mint border border-mint/30 rounded-full px-2 py-0.5">
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
