@@ -71,7 +71,7 @@ export const projects: Project[] = [
     dataset:
       "Dataset limpio exportado del análisis exploratorio de la Parte 1: 7.043 clientes y 21 variables tras el proceso de ETL y EDA previo.",
     results:
-      "Regresión Logística alcanzó ROC-AUC ~0.85. Las variables más influyentes fueron antigüedad, cargos mensuales y tipo de contrato. Modelos exportados (.pkl) listos para scoring en producción.",
+      "Regresión Logística alcanzó ROC-AUC ~0.85. Las variables más influyentes fueron antigüedad, cargos mensuales y tipo de contrato. Modelo exportado para pruebas de predicción y análisis de riesgo de churn.",
     caso: "https://github.com/rb-olivera/Telecom-X-Parte-Dos---AluraLatam/blob/main/Telecom_X_ParteDos.ipynb",
     repo: "https://github.com/rb-olivera/Telecom-X-Parte-Dos---AluraLatam",
   },
@@ -100,6 +100,6 @@ export const specialties: Specialty[] = [
     title: "SQL & Modelado",
     description:
       "Diseño de queries eficientes, transformación de datos y modelado dimensional para análisis escalable.",
-    tags: ["PostgreSQL", "BigQuery", "dbt"],
+    tags: ["SQL", "Modelado relacional", "Consultas para análisis"],
   },
 ];
