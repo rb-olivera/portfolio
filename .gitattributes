@@ -1,2 +1,14 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Normalizar line endings a LF en el repo (compatible con Linux/Vercel)
+* text=auto eol=lf
+
+# Tratar binarios como binarios (no tocar line endings)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
