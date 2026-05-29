@@ -4,13 +4,13 @@
 export const site = {
   name: "Rebeca Olivera More",
   role: "Analista de Datos",
-  location: "Berazategui, Argentina",
+  location: "Quilmes, Argentina",
   available: true,
   tagline:
     "Transformo datos en decisiones de negocio con Python, SQL y herramientas de BI.",
   email: "rebeca-olivera@live.com.ar",
   cvUrl: "/cv.pdf", // poné tu CV en /public/cv.pdf
-  photoUrl: "/foto.png", // poné tu foto en /public/foto.png
+  photoUrl: "", // poné tu foto en /public/foto.png
   socials: {
     github: "https://github.com/rb-olivera",
     linkedin: "https://www.linkedin.com/in/rb-olivera",
