@@ -15,8 +15,8 @@
   --color-mint: #9ef5b8;
 
   --font-display: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Geist", "Inter", system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "Menlo", monospace;
+  --font-sans: "Geist Variable", "Geist", "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, "Menlo", monospace;
 }
 
 /* Webfonts — loaded from Google Fonts for zero-setup */

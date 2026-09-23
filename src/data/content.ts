@@ -75,6 +75,20 @@ export const projects: Project[] = [
     caso: "https://github.com/rb-olivera/Telecom-X-Parte-Dos---AluraLatam/blob/main/Telecom_X_ParteDos.ipynb",
     repo: "https://github.com/rb-olivera/Telecom-X-Parte-Dos---AluraLatam",
   },
+  {
+    title: "Análisis de Ventas y Campañas de Marketing — SynthData",
+    year: "2026",
+    tools: ["Python", "Pandas", "Seaborn", "Plotly", "SciPy"],
+    problem:
+      "Identificar qué impulsa los ingresos de un retailer de electrodomésticos, electrónica y decoración, y evaluar si sus campañas de marketing se reflejan en las ventas.",
+    course: "Trabajo Práctico Integrador — Talento Tech, Data Analytics con Python",
+    dataset:
+      "3 archivos CSV (ventas, clientes y campañas de marketing) con ~3.000 ventas de 2024, 567 clientes y 90 campañas en TV, redes sociales y email.",
+    results:
+      "Electrodomésticos lidera en ingresos, con las tres categorías dentro de un margen del 5%. Las ventas ocurridas durante campañas no muestran un ticket significativamente mayor (p ≈ 0,48). Recomendación: medir el impacto en volumen y costo por canal antes de reasignar inversión.",
+    caso: "https://nbviewer.org/github/rb-olivera/Proyecto-TalentoTech/blob/main/OliveraMoreRebeca%20-%20TPI%20Data%20Analytics/notebooks/analisis_portfolio.ipynb",
+    repo: "https://github.com/rb-olivera/Proyecto-TalentoTech",
+  },
 ];
 
 export type Specialty = {
